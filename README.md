@@ -38,13 +38,9 @@ git merge branch-name
 # Fetch changes from the remote repository:
 git fetch origin
 
-
 # Pull changes from the remote repository:
 git pull origin branch-name
 
 # Push changes to the remote repository:
 git push origin branch-name
-
-
-
 
