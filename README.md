@@ -35,6 +35,12 @@ git log
 # Merge a branch into your current branch:
 git merge branch-name
 
+# Resolve any merge conflicts (if necessary)
+If there are any merge conflicts, Git will prompt you to resolve them. After resolving the conflicts, you need to add the resolved files and commit the merge:
+git add <resolved-files>
+git commit -m "Resolved merge conflicts"
+
+
 # Fetch changes from the remote repository:
 git fetch origin
 
