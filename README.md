@@ -1,6 +1,6 @@
 # VG-Studio-Productions
 
-Starting template for VG Studio project
+Starting template for VG Studio project...
 
 # Create a New Branch
 git branch <branch-name>
