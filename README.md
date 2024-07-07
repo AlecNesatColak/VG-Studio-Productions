@@ -8,6 +8,18 @@ git branch <branch-name>
 # Switch to the New Branch
 git checkout <branch-name>
 
+# Stage your changes:
+git add .
+
+# Commit your changes:
+git commit -m "Your commit message"
+
+# Push to the main branch:
+git push origin main
+
+## If you are pushing to a different branch, replace main with the name of your branch:
+git push origin <branch-name>
+
 # Push the New Branch to the Remote Repository
 git push origin <branch-name>
 
@@ -34,15 +46,5 @@ git pull origin branch-name
 git push origin branch-name
 
 
-# Stage your changes:
-git add .
-
-# Commit your changes:
-git commit -m "Your commit message"
-
-# Push to the main branch:
-git push origin main
-## If you are pushing to a different branch, replace main with the name of your branch:
-git push origin <branch-name>
 
 
