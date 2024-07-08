@@ -1,11 +1,9 @@
-import "./index.css";
+import React from 'react'
 
 function App() {
   return (
-    <div>
-      <p>Hello</p>
-    </div>
-  );
+    <div>App</div>
+  )
 }
 
-export default App;
+export default App
