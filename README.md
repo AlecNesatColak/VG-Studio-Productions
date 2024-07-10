@@ -2,7 +2,7 @@
 
 Starting template for VG Studio project
 # Pull changes from the remote repository:
-git pull origin <branch-name>
+git pull origin <branch-name> !!
 
 # Create a New Branch
 git branch <branch-name>
