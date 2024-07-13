@@ -1,11 +1,11 @@
-const express = require('express');
-
+const express = require("express");
 const router = express.Router();
 
-router.post('/register', async (req, res) => {
-  try {
-    
-  } catch (error) {
-    console.error(error, "error registering");  
-  }
-})
+// Define your routes here
+router.get('/', (req, res) => {
+  res.send("Admin route works!");
+});
+
+module.exports = router;
+
+

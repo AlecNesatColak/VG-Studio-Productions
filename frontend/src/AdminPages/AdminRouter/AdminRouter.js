@@ -4,6 +4,7 @@ import AdminEvents from "../AdminPanelPages/Events/AdminEvents.jsx";
 import AdminModels from "../AdminPanelPages/AdminModels/AdminModels.jsx";
 import AdminPortfolio from "../AdminPanelPages/AdminPortfolio/AdminPortfolio.jsx";
 import AdminSettings from "../AdminPanelPages/AdminSettings/AdminSettings.jsx";
+import Register from "../AdminRegister/Register.jsx";
 
 export const AdminRouter = [
     {
@@ -36,6 +37,10 @@ export const AdminRouter = [
         element: <AdminSettings />,
 
     },
+    {
+        path: "/admin-register",
+        element: <Register />
+    }
 ]
 
 export default AdminRouter;

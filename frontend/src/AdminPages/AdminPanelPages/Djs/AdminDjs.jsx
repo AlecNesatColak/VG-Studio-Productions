@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import "./AdminDjsStyle.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 const AdminDjs = () => {
   const [djs, setDjs] = useState([]);
@@ -126,7 +130,7 @@ const AdminDjs = () => {
                 {dj.socialMedia.map((link, index) => (
                   <li key={index}>
                     <a
-                      href={link.startsWith('http') ? link : `https://${link}`}
+                      href={link.startsWith("http") ? link : `https://${link}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
