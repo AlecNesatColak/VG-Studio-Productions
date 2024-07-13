@@ -9,10 +9,11 @@ function AdminHomePage({ children }) {
      
     <div className="adminHomePage">
        <Sidebar />
-      <Topbar />
+       <Topbar />
       <div className="layout">
         <div className="content">{children}</div>
       </div>
+
     </div>
     </>
     

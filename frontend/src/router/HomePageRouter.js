@@ -42,6 +42,7 @@ export const HomePageRouter = [
         element: <AdminRegister />,
 
     },
+   
 ]
 
 export default HomePageRouter;
