@@ -1,0 +1,133 @@
+.admin-djs-container {
+  padding: 20px;
+}
+
+.dj-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Opak siyah arka plan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Diğer içeriklerden üstte olacak */
+  visibility: hidden; /* Başlangıçta görünmez */
+  opacity: 0; /* Başlangıçta görünmez */
+  transition: visibility 0s, opacity 0.3s ease; /* Geçiş efekti */
+}
+
+.dj-form-container.active {
+  visibility: visible; /* Form açıldığında görünür */
+  opacity: 1; /* Form açıldığında opaklık */
+}
+
+.dj-form {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dj-form h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.dj-form input,
+.dj-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dj-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dj-list {
+  margin-top: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.dj-list-item {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dj-list-item h3 {
+  margin-bottom: 5px;
+}
+
+.dj-list-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.social-media-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-media-links li {
+  margin: 0 5px;
+}
+
+.social-media-links a {
+  color: #3498db;
+}
+
+.social-media-links a:hover {
+  text-decoration: none;
+  color: #2980b9;
+}
+
+.close-form-btn {
+  position: absolute; /* Mutlak pozisyon */
+  top: 10px; /* Sağ üst köşe için yükseklik */
+  right: 10px; /* Sağ üst köşe için sağlık */
+  padding: 8px 12px; /* Buton içeriği içi dolgu */
+  background-color: #f00; /* Arkaplan rengi */
+  color: #fff; /* Yazı rengi */
+  border: none; /* Kenarlık yok */
+  border-radius: 4px; /* Köşe yuvarlama */
+  cursor: pointer; /* İşaretçi */
+}
+
+.close-form-btn:hover {
+  background-color: #f55; /* Hover efekti */
+}
+.add-btn {
+  background-color: green; /* Arkaplan rengi */
+  color: #fff; /* Yazı rengi */
+  padding: 10px 20px; /* Buton içeriği için iç dolgu */
+  border: none; /* Kenarlık yok */
+  border-radius: 4px; /* Köşe yuvarlama */
+  cursor: pointer; /* İşaretçi */
+  margin-bottom: 10px; /* Altındaki boşluk */
+}
+
+.add-btn:hover {
+  background-color: #0056b3; /* Hover efekti */
+}

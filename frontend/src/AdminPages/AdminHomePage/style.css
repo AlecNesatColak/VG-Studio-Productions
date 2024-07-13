@@ -1,0 +1,199 @@
+.adminHomePage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ensure it takes the full viewport height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.layout {
+  display: flex;
+  flex: 1; /* Take up the remaining space */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.content {
+  flex: 1; /* Take up the remaining space */
+  margin-top: 100px; /* Adjust according to the height of your topbar */
+  margin-left: 50px; /* Adjust according to the width of your sidebar */
+  overflow-y: auto; /* Add vertical scroll if content overflows */
+  padding: 20px;
+  background-color: #f4f4f4; /* Optional: background color for content area */
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 200px; /* Adjust as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #2c3e50;
+}
+
+/* Topbar styles */
+.topbar {
+  height: 60px; /* Adjust as needed */
+  width: calc(100% - 200px); /* Adjust according to the width of your sidebar */
+  position: fixed;
+  top: 0;
+  left: 200px;
+  background-color: #3498db;
+}
+
+.adminHomePage .layout {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  height: calc(100% - 60px); /* Topbar yüksekliğini hesaba kat */
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding-top: 60px; /* Topbar ile çakışmamak için padding ekle */
+}
+
+.adminHomePage .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 60px); /* Topbar yüksekliğini düşür */
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.adminHomePage .topbar {
+  width: 100%;
+  height: 60px;
+  background-color: #34495e;
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.adminHomePage .sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 60px; /* Topbar yüksekliği kadar aşağıya kaydır */
+  left: 0;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.adminHomePage .sidebar h2 {
+  text-align: center;
+}
+
+.adminHomePage .sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.adminHomePage .sidebar ul li {
+  margin: 20px 0;
+}
+
+.adminHomePage .sidebar ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.adminHomePage .sidebar ul li a:hover {
+  color: #3498db;
+}
+
+.adminHomePage .main-content {
+  flex-grow: 1;
+  background-color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminHomePage .topbar {
+  background-color: #2980b9;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adminHomePage .search-box input {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  justify-content: right;
+}
+
+.adminHomePage .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.adminHomePage .user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.adminHomePage .dashboard {
+  padding: 20px;
+}
+
+.adminHomePage .stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.adminHomePage .stat {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.adminHomePage .stat h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.adminHomePage .stat p {
+  margin: 5px 0 0;
+}
+
+.adminHomePage .admin-events {
+  padding: 20px;
+}
+
+.adminHomePage .events-list {
+  display: grid;
+  gap: 20px;
+}
+
+.adminHomePage .event-item {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.adminHomePage .event-item h3 {
+  margin-bottom: 5px;
+}
+
+.adminHomePage .event-item p {
+  margin: 0;
+}

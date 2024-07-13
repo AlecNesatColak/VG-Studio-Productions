@@ -1,23 +1,24 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import HomePageRouter from "./router/HomePageRouter.js";
-import HomePageLayout from "./components/HomePageLayout.jsx";
+import AdminHomePage from "../AdminHomePage/AdminHomePage";
+import AdminRouter from "../AdminRouter/AdminRouter";
 
-const App = () => {
+function AdminApp() {
   return (
     <>
-      <HomePageLayout>
+       <AdminHomePage>
         <Routes>
         {/*  If you want to add a new page, you must add it from within the router  */}
-        {HomePageRouter.map((item, index) => {
+        {AdminRouter.map((item, index) => {
           return <Route key={index} {...item} />;
         })}
       </Routes>
-      </HomePageLayout>
-      
-      
+       </AdminHomePage>
+       
+
+   
     </>
   );
-};
+}
 
-export default App;
+export default AdminApp;
