@@ -1,20 +1,22 @@
-import React from 'react'
-import '../AdminHomePage/style.css';
-import Sidebar from '../AdminHomePage/Sidebar';
-import Topbar from '../AdminHomePage/Topbar';
+import React from 'react';
+import './style.css';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
 
-
-
-function AdminHomePage() {
+function AdminHomePage({ children }) {
   return (
-    <div className="container">
-      <Sidebar />
-      <div className="main-content">
-        <Topbar />
-      
+    <>
+     
+    <div className="adminHomePage">
+       <Sidebar />
+      <Topbar />
+      <div className="layout">
+        <div className="content">{children}</div>
       </div>
     </div>
-  )
+    </>
+    
+  );
 }
 
-export default AdminHomePage
+export default AdminHomePage;

@@ -2,7 +2,7 @@
 
 Starting template for VG Studio project
 # Pull changes from the remote repository:
-git pull origin <branch-name> !!
+git pull origin <branch-name> !!!!
 
 # Create a New Branch
 git branch <branch-name>
@@ -42,3 +42,7 @@ git log
 # Fetch changes from the remote repository:
 git fetch origin
 
+# Page route 
+
+Currently there are 2 separate UI parts in the project, the first is the adminpanel and the second is the main project.
+There is a separate route file for each project. When you want to add a new page, simply go to the route.js file of the project and add the path and element section.

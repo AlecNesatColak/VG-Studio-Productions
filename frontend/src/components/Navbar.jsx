@@ -4,13 +4,12 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-       
-
-   <nav className="navbar">
-      <div className="navbar-logo">
-        <Link to="/">My Photography</Link>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <div className="navbar-logo"></div>
+        <span className="navbar-title">VG STUDiO</span>
       </div>
-      <ul className="navbar-links">
+      <ul className="navbar-right">
         <li>
           <Link to="/" className="nav-link">Home</Link>
         </li>
@@ -31,7 +30,6 @@ function Navbar() {
         </li>
       </ul>
     </nav>
-    
   );
 }
 

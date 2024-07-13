@@ -6,12 +6,12 @@ function Sidebar() {
       <nav className="sidebar">
         <div>
           <ul>
-            <li><Link to="/admin/dashboard">Dashboard</Link></li>
-            <li><Link to="/admin/djs">DJs</Link></li>
-            <li><Link to="/admin/events">Events</Link></li>
-            <li><Link to="/admin/models">Models</Link></li>
-            <li><Link to="/admin/portfolio">Portfolio</Link></li>
-            <li><Link to="/admin/settings">Settings</Link></li>
+            <li><Link to="/admin-dashboard">Dashboard</Link></li>
+            <li><Link to="/admin-djs">DJs</Link></li>
+            <li><Link to="/admin-events">Events</Link></li>
+            <li><Link to="/admin-models">Models</Link></li>
+            <li><Link to="/admin-portfolio">Portfolio</Link></li>
+            <li><Link to="/admin-settings">Settings</Link></li>
           </ul>
         </div>
       </nav>
