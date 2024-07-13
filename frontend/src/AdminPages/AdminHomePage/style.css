@@ -45,7 +45,9 @@
   padding: 20px;
   background-color: #f4f4f4;
   margin-top: 60px; /* Topbar yüksekliği kadar margin ekle */
-  max-height: calc(100vh - 60px); /* Topbar yüksekliği kadar maksimum yükseklik ayarı */
+  max-height: calc(90vh - 60px); /* Topbar yüksekliği kadar maksimum yükseklik ayarı */
+  max-width: 90vh;
+ 
 }
 
 .adminHomePage .layout {
@@ -157,6 +159,7 @@
   height: 40px;
   border-radius: 50%;
   margin-left: 10px;
+  object-fit: cover;
 }
 
 .adminHomePage .dashboard {

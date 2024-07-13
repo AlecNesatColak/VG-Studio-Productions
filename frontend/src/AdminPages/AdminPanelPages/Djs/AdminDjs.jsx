@@ -1,40 +1,57 @@
 import React, { useState } from "react";
 import "./AdminDjsStyle.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 const AdminDjs = () => {
   const [djs, setDjs] = useState([]);
   const [newDj, setNewDj] = useState({
     name: "",
-    photo: "",
+    photos: [],
     bio: "",
     socialMedia: ["", "", ""],
   });
   const [showForm, setShowForm] = useState(false);
 
   const handleInputChange = (e, index) => {
-    const { name, value } = e.target;
-    if (name.startsWith("socialMedia")) {
+    const { name, files } = e.target;
+
+    if (name === "photos") {
+      const selectedPhotos = Array.from(files).slice(0, 5); // En fazla 5 dosya al
+
+      // Dosyaları konsola yazdır
+      console.log("Seçilen fotoğraflar:", selectedPhotos);
+
+      setNewDj({ ...newDj, photos: selectedPhotos });
+    } else if (name.startsWith("socialMedia")) {
       const socialMedia = [...newDj.socialMedia];
-      socialMedia[index] = value;
+      socialMedia[index] = e.target.value;
       setNewDj({ ...newDj, socialMedia });
     } else {
-      setNewDj({ ...newDj, [name]: value });
+      setNewDj({ ...newDj, [name]: e.target.value });
     }
   };
 
   const addDj = () => {
     if (
       newDj.name &&
-      newDj.photo &&
+      newDj.photos.length > 0 &&
       newDj.bio &&
       newDj.socialMedia.every((link) => link)
     ) {
       setDjs([...djs, { ...newDj, id: djs.length + 1 }]);
-      setNewDj({ name: "", photo: "", bio: "", socialMedia: ["", "", ""] });
+      setNewDj({
+        name: "",
+        photos: [],
+        bio: "",
+        socialMedia: ["", "", ""],
+      });
       toast.success("DJ başarıyla eklendi!");
     } else {
       toast.error("Lütfen tüm alanları doldurun");
@@ -85,10 +102,9 @@ const AdminDjs = () => {
             onChange={(e) => handleInputChange(e)}
           />
           <input
-            type="text"
-            name="photo"
-            placeholder="Profile Photo URL"
-            value={newDj.photo}
+            type="file"
+            name="photos"
+            multiple // Birden fazla dosya seçimini etkinleştirir
             onChange={(e) => handleInputChange(e)}
           />
           <textarea
@@ -120,13 +136,22 @@ const AdminDjs = () => {
           {djs.map((dj) => (
             <li key={dj.id} className="dj-list-item">
               <h3>{dj.name}</h3>
-              <img src={dj.photo} alt={`${dj.name}`} className="dj-photo" />
+              <div className="photo-list">
+                {dj.photos.map((photo, index) => (
+                  <img
+                    key={index}
+                    src={URL.createObjectURL(photo)}
+                    alt={`${dj.name} Photo ${index + 1}`}
+                    className="dj-photo"
+                  />
+                ))}
+              </div>
               <p>{dj.bio}</p>
               <ul className="social-media-links">
                 {dj.socialMedia.map((link, index) => (
                   <li key={index}>
                     <a
-                      href={link.startsWith('http') ? link : `https://${link}`}
+                      href={link.startsWith("http") ? link : `https://${link}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
