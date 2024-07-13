@@ -1,63 +1,73 @@
 .adminHomePage {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Ensure it takes the full viewport height */
-  overflow: hidden; /* Prevent overflow */
+  height: 100vh; /* Sayfanın tamamını kaplaması için */
+ 
 }
 
 .layout {
   display: flex;
-  flex: 1; /* Take up the remaining space */
-  overflow: hidden; /* Prevent overflow */
+  flex: 1;
+
 }
 
-.content {
-  flex: 1; /* Take up the remaining space */
-  margin-top: 100px; /* Adjust according to the height of your topbar */
-  margin-left: 50px; /* Adjust according to the width of your sidebar */
-  overflow-y: auto; /* Add vertical scroll if content overflows */
-  padding: 20px;
-  background-color: #f4f4f4; /* Optional: background color for content area */
-}
-
-/* Sidebar styles */
 .sidebar {
-  width: 200px; /* Adjust as needed */
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 60px; /* Topbar yüksekliği kadar aşağıya kaydır */
+  left: 0;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.topbar {
+  height: 60px;
+  width: 100%;
+  background-color: #2980b9;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  background-color: #2c3e50;
+  z-index: 1;
 }
 
-/* Topbar styles */
-.topbar {
-  height: 60px; /* Adjust as needed */
-  width: calc(100% - 200px); /* Adjust according to the width of your sidebar */
-  position: fixed;
-  top: 0;
-  left: 200px;
-  background-color: #3498db;
+.content {
+  flex: 1;
+  overflow-y: auto; /* İçeriğin taşması durumunda yalnızca içinde scroll oluştur */
+  padding: 20px;
+  background-color: #f4f4f4;
+  margin-top: 60px; /* Topbar yüksekliği kadar margin ekle */
+  max-height: calc(100vh - 60px); /* Topbar yüksekliği kadar maksimum yükseklik ayarı */
 }
 
 .adminHomePage .layout {
-  margin-left: 250px;
-  width: calc(100% - 250px);
-  height: calc(100% - 60px); /* Topbar yüksekliğini hesaba kat */
-  overflow: auto;
+  position: sticky;
+  top: 60px; /* Topbar yüksekliği kadar */
+  margin-left: 250px; /* Sidebar genişliği kadar */
+  width: calc(100% - 250px); /* Sidebar genişliği kadar çıkar */
+  height: calc(100% - 60px); /* Topbar yüksekliği kadar çıkar */
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f5f5f5;
-  padding-top: 60px; /* Topbar ile çakışmamak için padding ekle */
+  padding-top: 60px; /* İçeriği başlangıç noktasından itibaren yerleştir */
+  overflow: hidden;
 }
 
 .adminHomePage .content {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* İçeriğin aşağı doğru büyümesi için */
+  align-items: center; /* İçeriği ortala */
+  justify-content: flex-start; /* İçeriği üstten başlat */
   width: 100%;
-  min-height: calc(100vh - 60px); /* Topbar yüksekliğini düşür */
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
