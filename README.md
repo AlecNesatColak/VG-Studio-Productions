@@ -32,7 +32,7 @@ git push origin main
 
 If there are any merge conflicts, Git will prompt you to resolve them. After resolving the conflicts, you need to add the resolved files and commit the merge:
 git add <resolved-files>
-git commit -m "Resolved merge conflicts"
+git commit -m "Resolved merge conflicts".
 
 # To see current branch (local and remote):
 
