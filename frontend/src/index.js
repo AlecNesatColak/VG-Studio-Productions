@@ -4,7 +4,7 @@ import App from "./App";
 import AdminApp from "../src/AdminPages/AdminHomePage/AdminApp";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import DeveloperApp from "./DevPages/DeveloperHomePage/DeveloperHomePage";
+import DeveloperApp from "./DevPages/DeveloperHomePage/DeveloperApp"; // Ensure the correct path to DeveloperApp
 
 const path = window.location.pathname;
 
@@ -15,7 +15,8 @@ if (path.startsWith("/admin-panel")) {
     </BrowserRouter>,
     document.getElementById("root")
   );
-} else if (path.startsWith("/developer-home")) {
+} else if (path.startsWith("/developer")) {
+  // Changed to "/developer" to handle all developer routes
   ReactDOM.render(
     <BrowserRouter>
       <DeveloperApp />

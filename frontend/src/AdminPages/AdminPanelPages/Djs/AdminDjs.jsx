@@ -66,6 +66,11 @@ const AdminDjs = () => {
     setShowForm(false);
   };
 
+  const deleteDj = (id) => {
+    setDjs(djs.filter((dj) => dj.id !== id));
+    toast.success("DJ başarıyla silindi!");
+  };
+
   const renderSocialIcon = (link) => {
     if (link.includes("facebook.com")) {
       return <FontAwesomeIcon icon={faFacebook} />;
@@ -81,12 +86,6 @@ const AdminDjs = () => {
   return (
     <div className="admin-djs-container">
       <ToastContainer />
-
-      {/* Add DJ Button */}
-      <button className="add-btn" onClick={toggleForm}>
-        Add New DJ
-      </button>
-
       {/* DJ Ekleme Formu */}
       <div className={`dj-form-container ${showForm ? "active" : ""}`}>
         <div className="dj-form">
@@ -128,7 +127,6 @@ const AdminDjs = () => {
           </button>
         </div>
       </div>
-
       {/* DJ Listesi */}
       <div className="dj-list">
         <h2>DJ List</h2>
@@ -160,10 +158,17 @@ const AdminDjs = () => {
                   </li>
                 ))}
               </ul>
+              <button className="delete-btn" onClick={() => deleteDj(dj.id)}>
+                Delete DJ
+              </button>
             </li>
           ))}
         </ul>
-      </div>
+      </div>{" "}
+      {/* Add DJ Button */}
+      <button className="add-btn" onClick={toggleForm}>
+        Add New DJ
+      </button>
     </div>
   );
 };

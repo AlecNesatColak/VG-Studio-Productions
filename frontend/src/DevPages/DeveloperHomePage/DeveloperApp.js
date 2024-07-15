@@ -2,18 +2,24 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import DeveloperHomePage from "../DeveloperHomePage/DeveloperHomePage";
 import DeveloperRouter from "../DeveloperRouter/DeveloperRouter";
+import AuthenticatedRoute from "../AuthenticatedRoute"; // Import the AuthenticatedRoute component
 
 function DeveloperApp() {
   return (
     <>
-      <DeveloperHomePage>
-        <Routes>
-          {/*  If you want to add a new page, you must add it from within the router  */}
-          {DeveloperRouter.map((item, index) => {
-            return <Route key={index} {...item} />;
-          })}
-        </Routes>
-      </DeveloperHomePage>
+      <Routes>
+        {DeveloperRouter.map((item, index) => (
+          <Route key={index} {...item} />
+        ))}
+        <Route
+          path="/developer-home"
+          element={
+            <AuthenticatedRoute>
+              <DeveloperHomePage />
+            </AuthenticatedRoute>
+          }
+        />
+      </Routes>
     </>
   );
 }
