@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./Register.css";
 
-toast.configure();
-
 function Register() {
   const [formData, setFormData] = useState({
     username: "",
@@ -34,16 +32,17 @@ function Register() {
     }
 
     try {
-      const response = await axios.post("/api/admin/admin-register", {
-        username: formData.username,
-        confirmUsername: formData.confirmUsername,
-        email: formData.email,
-        confirmEmail: formData.confirmEmail,
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/admin-request/admin-register",
+        {
+          username: formData.username,
+          email: formData.email,
+        }
+      );
 
       if (response.data.success) {
         toast("Redirecting to login page");
-        navigate("/login");
+        navigate("/developer-home");
         toast.success(response.data.message);
       } else {
         toast.error(response.data.message);

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
@@ -15,9 +15,9 @@ const testSchema = new Schema({
   },
   role: {
     type: String,
-    enum: ['admin'],
-    default: 'admin',
+    enum: ["admin"],
+    default: "admin",
   },
-})
+});
 
-module.exports = mongoose.model('Test', testSchema)
+module.exports = mongoose.model("Test", testSchema);
