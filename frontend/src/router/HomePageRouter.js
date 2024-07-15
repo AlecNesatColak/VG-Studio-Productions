@@ -4,7 +4,6 @@ import Djs from "../Pages/Djs/Djs.jsx";
 import Events from "../Pages/Events/Events.jsx";
 import Models from "../Pages/Models/Models.jsx";
 import Portfolio from "../Pages/Portfolio/Portfolio.jsx";
-import AdminRegister from "../AdminPages/AdminRegister/Register";
 
 export const HomePageRouter = [
     {
@@ -37,12 +36,6 @@ export const HomePageRouter = [
         element: <Portfolio />,
 
     },
-    {
-        path: "/admin-register",
-        element: <AdminRegister />,
-
-    },
-   
 ]
 
 export default HomePageRouter;
