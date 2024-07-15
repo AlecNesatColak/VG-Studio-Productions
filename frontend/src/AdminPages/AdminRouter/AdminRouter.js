@@ -7,40 +7,34 @@ import AdminSettings from "../AdminPanelPages/AdminSettings/AdminSettings.jsx";
 import Register from "../AdminRegister/Register.jsx";
 
 export const AdminRouter = [
-    {
-        path: "/admin-dashboard",
-        element: <AdminDashboard />,
-
-    },
-    {
-        path: "/admin-djs",
-        element: <AdminDjs />,
-
-    },
-    {
-        path: "/admin-events",
-        element: <AdminEvents />,
-
-    },
-    {
-        path: "/admin-models",
-        element: <AdminModels />,
-
-    },
-    {
-        path: "/admin-portfolio",
-        element: <AdminPortfolio />,
-
-    },
-    {
-        path: "/admin-settings",
-        element: <AdminSettings />,
-
-    },
-    {
-        path: "/admin-register",
-        element: <Register />
-    }
-]
+  {
+    path: "/admin-dashboard",
+    element: <AdminDashboard />,
+  },
+  {
+    path: "/admin-djs",
+    element: <AdminDjs />,
+  },
+  {
+    path: "/admin-events",
+    element: <AdminEvents />,
+  },
+  {
+    path: "/admin-models",
+    element: <AdminModels />,
+  },
+  {
+    path: "/admin-portfolio",
+    element: <AdminPortfolio />,
+  },
+  {
+    path: "/admin-settings",
+    element: <AdminSettings />,
+  },
+  {
+    path: "/admin-register-page",
+    element: <Register />,
+  },
+];
 
 export default AdminRouter;

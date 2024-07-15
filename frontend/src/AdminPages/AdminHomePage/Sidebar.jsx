@@ -12,6 +12,7 @@ function Sidebar() {
             <li><Link to="/admin-models">Models</Link></li>
             <li><Link to="/admin-portfolio">Portfolio</Link></li>
             <li><Link to="/admin-settings">Settings</Link></li>
+            <li><Link to="/admin-register-page">Admin Register Form</Link></li>
           </ul>
         </div>
       </nav>
