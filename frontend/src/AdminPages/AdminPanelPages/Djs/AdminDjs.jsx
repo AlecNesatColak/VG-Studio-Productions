@@ -18,16 +18,14 @@ const AdminDjs = () => {
     socialMedia: ["", "", ""],
   });
   const [showForm, setShowForm] = useState(false);
+  const [editingDj, setEditingDj] = useState(null);
 
   const handleInputChange = (e, index) => {
     const { name, files } = e.target;
 
     if (name === "photos") {
       const selectedPhotos = Array.from(files).slice(0, 5); // En fazla 5 dosya al
-
-      // Dosyaları konsola yazdır
       console.log("Seçilen fotoğraflar:", selectedPhotos);
-
       setNewDj({ ...newDj, photos: selectedPhotos });
     } else if (name.startsWith("socialMedia")) {
       const socialMedia = [...newDj.socialMedia];
@@ -38,21 +36,32 @@ const AdminDjs = () => {
     }
   };
 
-  const addDj = () => {
+  const addOrUpdateDj = () => {
     if (
       newDj.name &&
       newDj.photos.length > 0 &&
       newDj.bio &&
       newDj.socialMedia.every((link) => link)
     ) {
-      setDjs([...djs, { ...newDj, id: djs.length + 1 }]);
+      if (editingDj) {
+        setDjs(
+          djs.map((dj) =>
+            dj.id === editingDj.id ? { ...newDj, id: editingDj.id } : dj
+          )
+        );
+        toast.success("DJ başarıyla güncellendi!");
+      } else {
+        setDjs([...djs, { ...newDj, id: djs.length + 1 }]);
+        toast.success("DJ başarıyla eklendi!");
+      }
       setNewDj({
         name: "",
         photos: [],
         bio: "",
         socialMedia: ["", "", ""],
       });
-      toast.success("DJ başarıyla eklendi!");
+      setEditingDj(null);
+      setShowForm(false);
     } else {
       toast.error("Lütfen tüm alanları doldurun");
     }
@@ -64,6 +73,19 @@ const AdminDjs = () => {
 
   const closeForm = () => {
     setShowForm(false);
+    setEditingDj(null);
+    setNewDj({
+      name: "",
+      photos: [],
+      bio: "",
+      socialMedia: ["", "", ""],
+    });
+  };
+
+  const editDj = (dj) => {
+    setEditingDj(dj);
+    setNewDj(dj);
+    setShowForm(true);
   };
 
   const renderSocialIcon = (link) => {
@@ -93,7 +115,7 @@ const AdminDjs = () => {
           <div className="close-form-btn" onClick={closeForm}>
             X
           </div>
-          <h2>Add New DJ</h2>
+          <h2>{editingDj ? "Update DJ" : "Add New DJ"}</h2>
           <input
             type="text"
             name="name"
@@ -123,8 +145,8 @@ const AdminDjs = () => {
               onChange={(e) => handleInputChange(e, index)}
             />
           ))}
-          <button className="add-btn" onClick={addDj}>
-            Add DJ
+          <button className="add-btn" onClick={addOrUpdateDj}>
+            {editingDj ? "Update DJ" : "Add DJ"}
           </button>
         </div>
       </div>
@@ -160,6 +182,9 @@ const AdminDjs = () => {
                   </li>
                 ))}
               </ul>
+              <button className="delete-btn" onClick={() => deleteDj(dj.id)}>
+                Delete DJ
+              </button>
             </li>
           ))}
         </ul>

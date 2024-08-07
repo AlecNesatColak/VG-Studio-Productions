@@ -8,12 +8,12 @@ function AdminHomePage({ children }) {
     <>
      
     <div className="adminHomePage">
-       <Sidebar />
-       <Topbar />
+      
       <div className="layout">
         <div className="content">{children}</div>
       </div>
-
+       <Sidebar />
+       <Topbar />
     </div>
     </>
     
