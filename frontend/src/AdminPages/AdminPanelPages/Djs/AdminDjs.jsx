@@ -24,7 +24,8 @@ const AdminDjs = () => {
     const { name, files } = e.target;
 
     if (name === "photos") {
-      const selectedPhotos = Array.from(files).slice(0, 5);
+      const selectedPhotos = Array.from(files).slice(0, 5); // En fazla 5 dosya al
+      console.log("Seçilen fotoğraflar:", selectedPhotos);
       setNewDj({ ...newDj, photos: selectedPhotos });
     } else if (name.startsWith("socialMedia")) {
       const socialMedia = [...newDj.socialMedia];
@@ -48,10 +49,10 @@ const AdminDjs = () => {
             dj.id === editingDj.id ? { ...newDj, id: editingDj.id } : dj
           )
         );
-        toast.success("DJ successfully updated");
+        toast.success("DJ başarıyla güncellendi!");
       } else {
         setDjs([...djs, { ...newDj, id: djs.length + 1 }]);
-        toast.success("DJ successfully added");
+        toast.success("DJ başarıyla eklendi!");
       }
       setNewDj({
         name: "",
@@ -85,11 +86,6 @@ const AdminDjs = () => {
     setEditingDj(dj);
     setNewDj(dj);
     setShowForm(true);
-  };
-
-  const deleteDj = (id) => {
-    setDjs(djs.filter((dj) => dj.id !== id));
-    toast.success("DJ successfully deleted");
   };
 
   const renderSocialIcon = (link) => {
@@ -178,14 +174,9 @@ const AdminDjs = () => {
                   </li>
                 ))}
               </ul>
-              <div className="button-container">
-                <button className="update-btn" onClick={() => editDj(dj)}>
-                  Update
-                </button>
-                <button className="delete-btn" onClick={() => deleteDj(dj.id)}>
-                  Delete
-                </button>
-              </div>
+              <button className="delete-btn" onClick={() => deleteDj(dj.id)}>
+                Delete DJ
+              </button>
             </li>
           ))}
         </ul>

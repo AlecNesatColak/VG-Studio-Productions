@@ -11,11 +11,12 @@ const user = {
 function AdminHomePage({ children }) {
   return (
     <div className="adminHomePage">
-      <Sidebar />
-      <div className="main-content">
-        <Topbar user={user} /> {/* Topbar'ı burada yerleştirerek en üste alın */}
+      
+      <div className="layout">
         <div className="content">{children}</div>
       </div>
+       <Sidebar />
+       <Topbar />
     </div>
   );
 }

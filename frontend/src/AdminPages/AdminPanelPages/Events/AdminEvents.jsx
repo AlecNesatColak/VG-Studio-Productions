@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import "./AdminEvents.css";
+import "./AdminEventsStyle.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function AdminEvents() {
-  // Örnek etkinlik verisi
-  const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [events, setEvents] = useState([
+    
+  ]);
+
   const [showForm, setShowForm] = useState(false);
   const [editingEvent, setEditingEvent] = useState(null);
   const [newEvent, setNewEvent] = useState({
@@ -67,7 +68,6 @@ function AdminEvents() {
   return (
     <div className="admin-events-container">
       <ToastContainer />
-      {/* Event Form */}
       <div className={`event-form-container ${showForm ? "active" : ""}`}>
         <div className="event-form">
           <div className="close-form-btn" onClick={closeForm}>
@@ -100,7 +100,6 @@ function AdminEvents() {
           </button>
         </div>
       </div>
-      {/* Event List */}
       <div className="event-list">
         <h2>Event List</h2>
         <ul className="grid-container">
@@ -123,7 +122,6 @@ function AdminEvents() {
           ))}
         </ul>
       </div>
-      {/* Add Event Button */}
       <button className="add-btn" onClick={toggleForm}>
         Add New Event
       </button>
