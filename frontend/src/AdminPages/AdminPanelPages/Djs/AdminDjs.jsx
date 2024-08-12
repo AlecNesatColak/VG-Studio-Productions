@@ -49,10 +49,10 @@ const AdminDjs = () => {
             dj.id === editingDj.id ? { ...newDj, id: editingDj.id } : dj
           )
         );
-        toast.success("DJ başarıyla güncellendi!");
+        toast.success("DJ successfully update");
       } else {
         setDjs([...djs, { ...newDj, id: djs.length + 1 }]);
-        toast.success("DJ başarıyla eklendi!");
+        toast.success("DJ successfully add");
       }
       setNewDj({
         name: "",
@@ -88,6 +88,11 @@ const AdminDjs = () => {
     setShowForm(true);
   };
 
+  const deleteDj = (id) => {
+    setDjs(djs.filter((dj) => dj.id !== id));
+    toast.success("DJ successfully delete");
+  };
+
   const renderSocialIcon = (link) => {
     if (link.includes("facebook.com")) {
       return <FontAwesomeIcon icon={faFacebook} />;
@@ -103,6 +108,7 @@ const AdminDjs = () => {
   return (
     <div className="admin-djs-container">
       <ToastContainer />
+      {/* DJ Ekleme Formu */}
       <div className={`dj-form-container ${showForm ? "active" : ""}`}>
         <div className="dj-form">
           <div className="close-form-btn" onClick={closeForm}>
@@ -119,7 +125,7 @@ const AdminDjs = () => {
           <input
             type="file"
             name="photos"
-            multiple
+            multiple // Birden fazla dosya seçimini etkinleştirir
             onChange={(e) => handleInputChange(e)}
           />
           <textarea
@@ -143,7 +149,7 @@ const AdminDjs = () => {
           </button>
         </div>
       </div>
-
+      {/* DJ Listesi */}
       <div className="dj-list">
         <h2>DJ List</h2>
         <ul className="grid-container">
@@ -174,14 +180,19 @@ const AdminDjs = () => {
                   </li>
                 ))}
               </ul>
-              <button className="delete-btn" onClick={() => deleteDj(dj.id)}>
-                Delete DJ
-              </button>
+              <div className="button-container">
+                <button className="update-btn" onClick={() => editDj(dj)}>
+                  Update 
+                </button>
+                <button className="delete-btn" onClick={() => deleteDj(dj.id)}>
+                  Delete
+                </button>
+              </div>
             </li>
           ))}
         </ul>
       </div>
-
+      {/* Add DJ Button */}
       <button className="add-btn" onClick={toggleForm}>
         Add New DJ
       </button>

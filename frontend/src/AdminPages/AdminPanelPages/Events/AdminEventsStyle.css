@@ -1,95 +1,97 @@
 .admin-events-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #0F2027;
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  border-radius: 10px;
+}
+
+.event-form-container.active {
+  display: flex;
+}
+
+.event-form-container {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  position: relative;
+  max-width: 90%; /* Formun boyutunu taşmasını önlemek için */
+  box-sizing: border-box;
+}
+
+.close-form-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.event-form h2 {
+  margin-bottom: 20px;
   
-  .event-form-container.active {
-    display: flex;
-  }
-  
-  .event-form-container {
-    display: none;
-    background: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .event-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
-    position: relative;
-  }
-  
-  .close-form-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
-  
-  .event-form h2 {
-    margin-bottom: 20px;
-  }
-  
-  .event-form input {
-    width: 270px; /* Change this to adjust the width */
-    padding: 10px; /* Adjust padding for height and spacing */
-    margin-bottom: 10px;
-    font-size: 16px; /* Adjust font size */
-  }
-  
-  .add-btn {
-    background: #28a745;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-  }
-  
-  .update-btn {
-    background: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  
-  .event-list {
-    margin-top: 20px;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-  }
-  
-  .event-list-item {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .delete-btn {
-    background: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
+}
+
+.event-form input {
+  width: 100%; /* Input genişliği formun genişliğine uyacak */
+  padding: 8px; /* Height ve spacing için padding'i küçülttüm */
+  margin-bottom: 10px;
+  font-size: 14px; /* Font boyutunu küçülttüm */
+  box-sizing: border-box;
+}
+
+.add-btn, .update-btn, .delete-btn {
+  color: #fff;
+  border: none;
+  padding: 8px 15px; /* Buton boyutlarını küçülttüm */
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.add-btn {
+  background: #28a745;
+}
+
+.update-btn {
+  background: #007bff;
+  margin-right: 10px;
+}
+
+.delete-btn {
+  background: #dc3545;
+}
+
+.event-list {
+  margin-top: 20px;
+}
+.event-list h2 {
+  color: white;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.event-list-item {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+}
