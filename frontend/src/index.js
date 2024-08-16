@@ -9,7 +9,7 @@ import Login from "./AdminPages/AdminLogin/Login.jsx";
 const path = window.location.pathname;
 
 const Root = () => {
-  if (path.startsWith("/admin-panel")) {
+  if (path.startsWith("/admin")) {
     return (
       <Routes>
         <Route path="/admin-login" element={<Login />} />

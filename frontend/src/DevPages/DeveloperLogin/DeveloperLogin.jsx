@@ -14,14 +14,12 @@ const DeveloperLogin = () => {
     try {
       const response = await axios.post(
         "http://localhost:5000/api/developer/auth/login",
-        {
-          username,
-          password,
-        }
+        { username, password }
       );
       if (response.data.token) {
         // Store the token in localStorage
-        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("developerToken", response.data.token);
+        // Redirect to developer-home
         navigate("/developer-home");
       }
     } catch (err) {

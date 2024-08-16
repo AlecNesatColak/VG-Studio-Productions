@@ -8,7 +8,7 @@ function DeveloperHomePage({ children }) {
     <>
       <div className="developerHomePage">
         <Topbar />
-        <div>{children ? children : <DevHomePage />}</div>
+        <div>{children}</div>
       </div>
     </>
   );
