@@ -2,9 +2,9 @@
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
-  background: #0F2027;
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   border-radius: 10px;
 }
 
@@ -43,7 +43,6 @@
 
 .event-form h2 {
   margin-bottom: 20px;
-  
 }
 
 .event-form input {
@@ -54,7 +53,9 @@
   box-sizing: border-box;
 }
 
-.add-btn, .update-btn, .delete-btn {
+.add-btn,
+.update-btn,
+.delete-btn {
   color: #fff;
   border: none;
   padding: 8px 15px; /* Buton boyutlarını küçülttüm */

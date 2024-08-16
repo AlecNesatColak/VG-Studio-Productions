@@ -1,37 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import Hero from './components/hero';
+import Features1 from './components/features1';
+import CTA from './components/cta';
+import Features2 from './components/features2';
+import Pricing from './components/pricing';
+import Steps from './components/steps';
+import Testimonial from './components/testimonial';
+import Contact from './components/contact';
+import './style.css';
+
 
 function Home() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [
-    "https://via.placeholder.com/800x400",
-    "https://via.placeholder.com/800x400",
-    "https://via.placeholder.com/800x400",
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((currentIndex + 1) % images.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [currentIndex, images.length]);
-
+  
   return (
-    <div>
-      <div>Home</div>
-      <div id="carousel" className="carousel">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`carousel-item ${
-              index === currentIndex ? "active" : ""
-            }`}
-          >
-            <img src={image} alt={`Sample ${index + 1}`} />
-          </div>
-        ))}
-      </div>
+   <>
+     <div className="home-container">
+      <Helmet>
+        <title>Spotless Hungry Crocodile</title>
+      </Helmet>
+      <Hero></Hero>
+      <Features1></Features1>
+      <CTA></CTA>
+      <Features2></Features2>
+      <Pricing></Pricing>
+      <Steps></Steps>
+      <Testimonial></Testimonial>
+      <Contact></Contact>
     </div>
+   </>
   );
 }
 

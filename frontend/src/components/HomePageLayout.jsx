@@ -1,12 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import Home from '../Home/src/views/home'
+import Home from '../Pages/Home/Home'
 
 function HomePageLayout({children}) {
   return (
     <>
-    <Home />
+    <Navbar/>
+    <div className='layout'>{children}</div>
+    <Footer/>
     </>
     
   )
