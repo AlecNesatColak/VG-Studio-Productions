@@ -8,7 +8,7 @@ const NotFound1 = (props) => {
   return (
     <div className="not-found1-container1">
       <Helmet>
-        <title>Spotless Hungry Crocodile</title>
+        <title></title>
       </Helmet>
       <h3>OOPS! PAGE NOT FOUND</h3>
       <div className="not-found1-container2">
