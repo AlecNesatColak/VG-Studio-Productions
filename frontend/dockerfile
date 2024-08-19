@@ -1,20 +1,21 @@
-# Frontend Dockerfile (React)
+# Use the official Node.js image as the base
 FROM node:16
 
-# Set working directory for the frontend
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to install dependencies
-COPY package*.json ./
+# Copy package.json and package-lock.json
+COPY ./package.json .
+COPY ./package-lock.json .
 
-# Install frontend dependencies using --legacy-peer-deps to resolve conflicts
+# Install dependencies with legacy peer dependencies flag
 RUN npm install --legacy-peer-deps
 
-# Copy the rest of the frontend source code
+# Copy the rest of the application code
 COPY . .
 
-# Expose the port that the frontend runs on
+# Expose port 3000 for the frontend
 EXPOSE 3000
 
-# Start the frontend
-CMD ["npm", "start"]
+# Start the frontend with npm start
+CMD ["npm", "run", "start-watch"]

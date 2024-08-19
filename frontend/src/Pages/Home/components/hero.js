@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import Script from 'dangerous-html/react'
-import PropTypes from 'prop-types'
+import Script from "dangerous-html/react";
+import PropTypes from "prop-types";
 
-import './hero.css'
+import "./hero.css";
 
 const Hero = (props) => {
   return (
@@ -183,52 +183,52 @@ const Hero = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Hero.defaultProps = {
   image3Src:
-    'https://images.unsplash.com/photo-1472162072942-cd5147eb3902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4MXw&ixlib=rb-4.0.3&q=80&w=1080',
-  image8Alt: 'Hero Image',
+    "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4MXw&ixlib=rb-4.0.3&q=80&w=1080",
+  image8Alt: "Hero Image",
   image2Src:
-    'https://images.unsplash.com/photo-1515401558980-f84ec141ebf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4MXw&ixlib=rb-4.0.3&q=80&w=1080',
-  image6Alt: 'Hero Image',
+    "https://images.unsplash.com/photo-1515401558980-f84ec141ebf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4MXw&ixlib=rb-4.0.3&q=80&w=1080",
+  image6Alt: "Hero Image",
   image11Src:
-    'https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4MXw&ixlib=rb-4.0.3&q=80&w=1080',
-  image5Alt: 'Hero Image',
-  image1Alt: 'Hero Image',
+    "https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4MXw&ixlib=rb-4.0.3&q=80&w=1080",
+  image5Alt: "Hero Image",
+  image1Alt: "Hero Image",
   image7Src:
-    'https://images.unsplash.com/photo-1601055412977-238b96530c85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080',
-  image7Alt: 'Hero Image',
-  image12Alt: 'Hero Image',
-  image2Alt: 'Hero Image',
+    "https://images.unsplash.com/photo-1601055412977-238b96530c85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080",
+  image7Alt: "Hero Image",
+  image12Alt: "Hero Image",
+  image2Alt: "Hero Image",
   image6Src:
-    'https://images.unsplash.com/photo-1466781783364-36c955e42a7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080',
+    "https://images.unsplash.com/photo-1466781783364-36c955e42a7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080",
   image12Src:
-    'https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080',
-  image3Alt: 'Hero Image',
+    "https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080",
+  image3Alt: "Hero Image",
   image9Src:
-    'https://images.unsplash.com/photo-1475938476802-32a7e851dad1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080',
-  image11Alt: 'Hero Image',
-  action2: 'Secondary action',
-  action1: 'Main action',
+    "https://images.unsplash.com/photo-1475938476802-32a7e851dad1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080",
+  image11Alt: "Hero Image",
+  action2: "Secondary action",
+  action1: "Main action",
   image8Src:
-    'https://images.unsplash.com/photo-1503980599186-9cc36eda351a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080',
+    "https://images.unsplash.com/photo-1503980599186-9cc36eda351a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080",
   image5Src:
-    'https://images.unsplash.com/photo-1633443245758-6a507463c89c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080',
+    "https://images.unsplash.com/photo-1633443245758-6a507463c89c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080",
   image4Src:
-    'https://images.unsplash.com/photo-1516979187457-637abb4f9353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080',
-  image10Alt: 'Hero Image',
-  image4Alt: 'Hero Image',
-  heading1: 'Medium length hero headline goes here',
+    "https://images.unsplash.com/photo-1516979187457-637abb4f9353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080",
+  image10Alt: "Hero Image",
+  image4Alt: "Hero Image",
+  heading1: "TESTING",
   content1:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
   image10Src:
-    'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080',
-  image9Alt: 'Hero Image',
+    "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080",
+  image9Alt: "Hero Image",
   image1Src:
-    'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080',
-}
+    "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080",
+};
 
 Hero.propTypes = {
   image3Src: PropTypes.string,
@@ -259,6 +259,6 @@ Hero.propTypes = {
   image10Src: PropTypes.string,
   image9Alt: PropTypes.string,
   image1Src: PropTypes.string,
-}
+};
 
-export default Hero
+export default Hero;

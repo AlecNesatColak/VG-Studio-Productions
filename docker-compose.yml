@@ -1,41 +1,41 @@
-version: "3.8"
-
+version: '3'
 services:
-  mongo:
-    image: mongo
-    container_name: mongo
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/app
+      - /app/node_modules  # This ensures node_modules is created fresh in the container
+    ports:
+      - "5000:5000"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: acolak9
-      MONGO_INITDB_ROOT_PASSWORD: TikiTaka10
+    - CHOKIDAR_USEPOLLING=true
+    - NODE_ENV=development
+    - MONGO_URL=mongodb+srv://acolak9:TikiTaka10@cluster0.jk0y8ed.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    env_file:
+      - ./backend/.env # Reference to your .env file
+    depends_on:
+      - mongodb
+
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/app #Important for hot loading
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - mongodb 
+
+  mongodb:
+    image: mongo:latest
     ports:
       - "27017:27017"
     volumes:
-      - mongo-data:/data/db
-
-  backend:
-    build: ./backend
-    container_name: backend
-    ports:
-      - "5001:5000"
-    depends_on:
-      - mongo
-    volumes:
-      - ./backend:/app
-    env_file:
-      - ./backend/.env
-
-  frontend:
-    build: ./frontend
-    container_name: frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    environment:
-      - NODE_ENV=development
+      - mongodb_data:/data/db
 
 volumes:
-  mongo-data:
+  mongodb_data:

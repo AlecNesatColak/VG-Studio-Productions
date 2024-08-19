@@ -398,7 +398,7 @@ Pricing.defaultProps = {
   plan2Feature31: 'Feature text goes here',
   plan3Feature11: 'Feature text goes here',
   plan1Yearly1: 'or $20 monthly',
-  plan2Price1: '$299/yr',
+  plan2Price1: '$0/yr',
   plan3Yearly: 'or $499 yearly',
   plan3Feature4: 'Feature text goes here',
   plan3Price1: '$499/yr',
