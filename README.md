@@ -232,3 +232,4 @@ To avoid issues:
 - **Resolving conflicts**: `git add <resolved-files>` and `git commit -m "Resolved merge conflicts"`
 
 ---
+---
