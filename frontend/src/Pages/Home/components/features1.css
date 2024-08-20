@@ -1,140 +1,204 @@
-.features1-container2 {
-  width: 100%;
+:root {
+  --first-color: hsl(82,60%,28%);
+  --title-color: hsl(0,0%,15%);
+  --text-color: hsl(0,0%,35%);
+  --body-color: hsl(0,0%,95%);
+  --nardo-grey: #686a6c;
+  --container-color: hsl(0,0%,100%);
+
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+  --middle-font-size: 16px;
+}
+
+/* Tüm elemanlar için box-sizing: border-box ekleyerek taşmayı önleme */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Yatay taşmayı önleme */
+  background-color: var(--body-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== CARD ===============*/
+
+.heading {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  color: var(--title-color);
+  text-transform: capitalize;
+  padding-left: 1rem;
+  border-left: 1rem solid var(--nardo-grey); /* Sol çizgi rengi */
+  position: relative;
+  top: 55px;
+  right: 320px;
+}
+
+.container {
   display: grid;
-  grid-gap: var(--dl-space-space-fiveunits);
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+}
+
+.card__container {
+  display: grid;
+  row-gap: 3.5rem;
+  max-width: 100%; /* Taşmayı önleme */
+}
+
+.card__article {
   position: relative;
-  grid-template-columns: 1fr 1fr;
-}
-.features1-image-container {
-  height: 100%;
-  display: flex;
-  position: relative;
-}
-.features1-image1 {
-  animation-name: fadeIn;
-  animation-delay: 0s;
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
-.features1-image2 {
-  animation-name: fadeIn;
-  animation-delay: 0s;
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
-.features1-image3 {
-  animation-name: fadeIn;
-  animation-delay: 0s;
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
-.features1-tabs-menu {
-  gap: var(--dl-space-space-twounits);
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-}
-.features1-tab-horizontal1 {
-  gap: var(--dl-space-space-twounits);
-  cursor: pointer;
-  display: flex;
   overflow: hidden;
-  align-self: stretch;
-  align-items: flex-start;
-  flex-shrink: 0;
 }
-.features1-divider-container1 {
-  display: flex;
-  align-self: stretch;
-  align-items: flex-start;
+
+.card__img {
+  width: 328px;
+  border-radius: 1.5rem;
+  max-width: 100%; /* Taşmayı önleme */
 }
-.features1-container3 {
-  width: 2px;
-  align-self: stretch;
-  background-color: var(--dl-color-theme-neutral-dark);
+
+.card__data {
+  width: 280px;
+  background-color: var(--container-color);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
+  max-width: 100%; /* Taşmayı önleme */
 }
-.features1-content1 {
-  gap: 16px;
-  flex: 1;
-  display: flex;
-  overflow: hidden;
-  flex-grow: 1;
-  align-items: flex-start;
-  flex-shrink: 0;
-  flex-direction: column;
-  justify-content: center;
+
+.card__description {
+  display: block;
+  font-size: var(--middle-font-size);
+  margin-bottom: .25rem;
 }
-.features1-tab-horizontal2 {
-  gap: var(--dl-space-space-twounits);
-  cursor: pointer;
-  display: flex;
-  overflow: hidden;
-  align-self: stretch;
-  align-items: flex-start;
-  flex-shrink: 0;
+
+.card__title {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+  margin-bottom: .75rem;
 }
-.features1-divider-container2 {
-  display: flex;
-  align-self: stretch;
-  align-items: flex-start;
+
+.card__button {
+  text-decoration: none;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--first-color);
 }
-.features1-container4 {
-  width: 2px;
-  align-self: stretch;
-  background-color: var(--dl-color-theme-neutral-dark);
+
+.card__button:hover {
+  text-decoration: underline;
 }
-.features1-content2 {
-  gap: 16px;
-  flex: 1;
-  display: flex;
-  overflow: hidden;
-  flex-grow: 1;
-  align-items: flex-start;
-  flex-shrink: 0;
-  flex-direction: column;
-  justify-content: center;
+
+/* Naming animations in hover */
+.card__article:hover .card__data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
 }
-.features1-tab-horizontal3 {
-  gap: var(--dl-space-space-twounits);
-  cursor: pointer;
-  display: flex;
-  overflow: hidden;
-  align-self: stretch;
-  align-items: flex-start;
-  flex-shrink: 0;
+
+.card__article:hover {
+  animation: remove-overflow 2s forwards;
 }
-.features1-divider-container3 {
-  display: flex;
-  align-self: stretch;
-  align-items: flex-start;
+
+.card__article:not(:hover) {
+  animation: show-overflow 2s forwards;
 }
-.features1-container5 {
-  width: 2px;
-  align-self: stretch;
-  background-color: var(--dl-color-theme-neutral-dark);
+
+.card__article:not(:hover) .card__data {
+  animation: remove-data 1s forwards;
 }
-.features1-content3 {
-  gap: 16px;
-  flex: 1;
-  display: flex;
-  overflow: hidden;
-  flex-grow: 1;
-  align-items: flex-start;
-  flex-shrink: 0;
-  flex-direction: column;
-  justify-content: center;
+
+/* Card animation */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
 }
-@media(max-width: 991px) {
-  .features1-container2 {
-    grid-gap: var(--dl-space-space-twounits);
-    grid-template-columns: 1fr;
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card__data {
+    width: 250px;
+    padding: 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .card__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+  .container {
+    height: 100vh;
+  }
+
+  .card__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card__img {
+    width: 348px;
+  }
+  .card__data {
+    width: 316px;
+    padding-inline: 2.5rem;
   }
 }

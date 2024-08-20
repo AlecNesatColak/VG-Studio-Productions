@@ -7,11 +7,11 @@
   --dl-space-space-unit: 16px;
   --dl-size-size-xxlarge: 288px;
   --dl-size-size-maxwidth: 1400px;
-  --dl-color-theme-accent1: #C5B6E0;
-  --dl-color-theme-accent2: #8F84D2;
+  --dl-color-theme-accent1: #686a6c;
+  --dl-color-theme-accent2: #535456;
   --dl-radius-radius-round: 50%;
-  --dl-color-theme-primary1: #23297F;
-  --dl-color-theme-primary2: #585AB3;
+  --dl-color-theme-primary1: #3e3f40;
+  --dl-color-theme-primary2: #1f1f20;
   --dl-space-space-halfunit: 8px;
   --dl-space-space-sixunits: 96px;
   --dl-space-space-twounits: 32px;
@@ -23,7 +23,7 @@
   --dl-color-theme-secondary1: #FFFFFF;
   --dl-color-theme-secondary2: #FBF1EB;
   --dl-space-space-threeunits: 48px;
-  --dl-color-theme-neutral-dark: #080A45;
+  --dl-color-theme-neutral-dark: #1f1f20;
   --dl-radius-radius-cardradius: 4px;
   --dl-color-theme-neutral-light: #FFFFFF;
   --dl-radius-radius-imageradius: 4px;
@@ -175,6 +175,7 @@
   font-family: STIX Two Text;
   font-weight: 600;
   line-height: 1.5;
+  color: white;
 }
 .thq-heading-3 {
   font-size: 26px;

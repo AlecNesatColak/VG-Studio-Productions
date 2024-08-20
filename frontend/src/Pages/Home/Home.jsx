@@ -23,7 +23,7 @@ function Home() {
         <Features2></Features2>
         <Pricing></Pricing>
         <Steps></Steps>
-        <Testimonial></Testimonial>
+        {/* <Testimonial></Testimonial> */}
         <Contact></Contact>
       </div>
     </>
