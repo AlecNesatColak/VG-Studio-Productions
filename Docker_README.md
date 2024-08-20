@@ -27,7 +27,7 @@ project-root/
 │
 ├── docker-compose.yml      # Docker Compose configuration
 ├── nuke.sh                 # Script to stop, remove, and clean Docker containers, images, and volumes
-└── setup-run.sh            # Script to build and run Docker containers
+└── setup.sh            # Script to build and run Docker containers
 ```
 
 ## Getting Started
@@ -37,7 +37,7 @@ project-root/
 To set up and build the Docker containers, use the provided `setup-run.sh` script. This script will build the Docker images for both the frontend and backend and ensure everything is ready.
 
 ```bash
-./setup-run.sh
+./setup.sh
 ```
 
 This will:
@@ -60,7 +60,7 @@ This command will:
 You can now access the application:
 
 - **Frontend** (React): http://localhost:3000
-- **Backend** (Node.js/Express): http://localhost:5000
+- **Backend** (Node.js/Express): http://localhost:5001
 
 ### 3. **Stopping the Application**
 

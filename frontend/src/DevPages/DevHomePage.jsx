@@ -10,7 +10,7 @@ function DeveloperPage() {
     async function fetchSubmissions() {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/admin-request/submissions"
+          "http://localhost:5001/api/admin-request/submissions"
         );
         setSubmissions(response.data);
       } catch (error) {
@@ -23,7 +23,7 @@ function DeveloperPage() {
   const handleAccept = async (id) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/admin-request/submissions/${id}/accept`
+        `http://localhost:5001/api/admin-request/submissions/${id}/accept`
       );
       setSubmissions(
         submissions.map((sub) =>
@@ -40,7 +40,7 @@ function DeveloperPage() {
   const handleDeny = async (id) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/admin-request/submissions/${id}/deny`
+        `http://localhost:5001/api/admin-request/submissions/${id}/deny`
       );
       setSubmissions(
         submissions.map((sub) =>

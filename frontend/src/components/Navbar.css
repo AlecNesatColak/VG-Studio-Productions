@@ -1,8 +1,14 @@
-.navbar {
+ :root{
+  --title-color: hsl(0,0%,15%);
+  --text-color: hsl(0,0%,35%);
+  --body-color: hsl(0,0%,95%);
+ }
+ 
+ .navbar {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
-  background-color: #121212;
+  background-color: transparent;
 }
 
 .navbar-left {
@@ -12,8 +18,7 @@
 
 .navbar-logo {
   width: 40px;
-  height: 40px;
- /*  background-image: url('/path-to-logo.png'); Logonun yolu */
+  height: 40px; 
   background-size: cover;
 }
 
@@ -39,5 +44,6 @@
 }
 
 .nav-link:hover {
-  color: #ff7f50;
-}
+  color: #595959;
+} 
+

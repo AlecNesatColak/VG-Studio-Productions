@@ -18,7 +18,7 @@ app.use("/api/admin", adminRoute);
 app.use("/api/admin-request", adminRequestRoute);
 app.use("/api/developer/auth", developerAuthRoutes);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 
 app.listen(port, () =>
   console.log(`Listening on port ${port}, server is running.`)

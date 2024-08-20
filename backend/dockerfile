@@ -18,8 +18,8 @@ COPY . .
 
 RUN npm install -g nodemon
 
-# Expose port 5000 for the backend
-EXPOSE 5000
+# Expose port 5001 for the backend
+EXPOSE 5001
 
 # Start the server using nodemon
 CMD ["nodemon", "server"]

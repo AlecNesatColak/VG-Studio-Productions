@@ -15,7 +15,7 @@ function Home() {
     <>
       <div className="home-container">
         <Helmet>
-          <title>VG Studio Productions</title>
+          <title>VG Studio Productions!!</title>
         </Helmet>
         <Hero></Hero>
         <Features1></Features1>

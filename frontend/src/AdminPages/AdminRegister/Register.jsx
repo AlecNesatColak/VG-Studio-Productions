@@ -33,7 +33,7 @@ function Register() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/admin-request/admin-register",
+        "http://localhost:5001/api/admin-request/admin-register",
         {
           username: formData.username,
           email: formData.email,
