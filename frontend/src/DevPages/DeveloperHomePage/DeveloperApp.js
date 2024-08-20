@@ -1,20 +1,26 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import DeveloperHomePage from "../DeveloperHomePage/DeveloperHomePage";
-import DeveloperRouter from "../DeveloperRouter/DeveloperRouter";
+import ProtectedRoute from "../ProtectedRoute";
+import DeveloperLogin from "../DeveloperLogin/DeveloperLogin";
+import DeveloperPage from "../DevHomePage"
 
 function DeveloperApp() {
   return (
-    <>
-      <DeveloperHomePage>
-        <Routes>
-          {/*  If you want to add a new page, you must add it from within the router  */}
-          {DeveloperRouter.map((item, index) => {
-            return <Route key={index} {...item} />;
-          })}
-        </Routes>
-      </DeveloperHomePage>
-    </>
+    <Routes>
+      <Route path="/developer-login" element={<DeveloperLogin />} />
+      <Route
+        path="/developer-home"
+        element={
+          <ProtectedRoute>
+            <DeveloperHomePage>
+              <DeveloperPage />
+            </DeveloperHomePage>
+          </ProtectedRoute>
+        }
+      />
+      {/* Add other routes here */}
+    </Routes>
   );
 }
 

@@ -1,0 +1,25 @@
+# Use the official Node.js image as the base
+FROM node:16
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies (don't copy over node_modules from host)
+RUN npm install --legacy-peer-deps
+
+# Rebuild bcrypt for the container's platform
+RUN npm rebuild bcrypt --build-from-source
+
+# Copy the rest of the application code
+COPY . .
+
+RUN npm install -g nodemon
+
+# Expose port 5000 for the backend
+EXPOSE 5000
+
+# Start the server using nodemon
+CMD ["nodemon", "server"]

@@ -18,16 +18,14 @@ const AdminDjs = () => {
     socialMedia: ["", "", ""],
   });
   const [showForm, setShowForm] = useState(false);
+  const [editingDj, setEditingDj] = useState(null);
 
   const handleInputChange = (e, index) => {
     const { name, files } = e.target;
 
     if (name === "photos") {
       const selectedPhotos = Array.from(files).slice(0, 5); // En fazla 5 dosya al
-
-      // Dosyaları konsola yazdır
       console.log("Seçilen fotoğraflar:", selectedPhotos);
-
       setNewDj({ ...newDj, photos: selectedPhotos });
     } else if (name.startsWith("socialMedia")) {
       const socialMedia = [...newDj.socialMedia];
@@ -38,23 +36,34 @@ const AdminDjs = () => {
     }
   };
 
-  const addDj = () => {
+  const addOrUpdateDj = () => {
     if (
       newDj.name &&
       newDj.photos.length > 0 &&
       newDj.bio &&
       newDj.socialMedia.every((link) => link)
     ) {
-      setDjs([...djs, { ...newDj, id: djs.length + 1 }]);
+      if (editingDj) {
+        setDjs(
+          djs.map((dj) =>
+            dj.id === editingDj.id ? { ...newDj, id: editingDj.id } : dj
+          )
+        );
+        toast.success("DJ successfully update");
+      } else {
+        setDjs([...djs, { ...newDj, id: djs.length + 1 }]);
+        toast.success("DJ successfully add");
+      }
       setNewDj({
         name: "",
         photos: [],
         bio: "",
         socialMedia: ["", "", ""],
       });
-      toast.success("DJ başarıyla eklendi!");
+      setEditingDj(null);
+      setShowForm(false);
     } else {
-      toast.error("Lütfen tüm alanları doldurun");
+      toast.error("Please fill in all fields");
     }
   };
 
@@ -64,6 +73,24 @@ const AdminDjs = () => {
 
   const closeForm = () => {
     setShowForm(false);
+    setEditingDj(null);
+    setNewDj({
+      name: "",
+      photos: [],
+      bio: "",
+      socialMedia: ["", "", ""],
+    });
+  };
+
+  const editDj = (dj) => {
+    setEditingDj(dj);
+    setNewDj(dj);
+    setShowForm(true);
+  };
+
+  const deleteDj = (id) => {
+    setDjs(djs.filter((dj) => dj.id !== id));
+    toast.success("DJ successfully delete");
   };
 
   const renderSocialIcon = (link) => {
@@ -81,19 +108,13 @@ const AdminDjs = () => {
   return (
     <div className="admin-djs-container">
       <ToastContainer />
-
-      {/* Add DJ Button */}
-      <button className="add-btn" onClick={toggleForm}>
-        Add New DJ
-      </button>
-
       {/* DJ Ekleme Formu */}
       <div className={`dj-form-container ${showForm ? "active" : ""}`}>
         <div className="dj-form">
           <div className="close-form-btn" onClick={closeForm}>
             X
           </div>
-          <h2>Add New DJ</h2>
+          <h2>{editingDj ? "Update DJ" : "Add New DJ"}</h2>
           <input
             type="text"
             name="name"
@@ -123,12 +144,11 @@ const AdminDjs = () => {
               onChange={(e) => handleInputChange(e, index)}
             />
           ))}
-          <button className="add-btn" onClick={addDj}>
-            Add DJ
+          <button className="add-btn" onClick={addOrUpdateDj}>
+            {editingDj ? "Update DJ" : "Add DJ"}
           </button>
         </div>
       </div>
-
       {/* DJ Listesi */}
       <div className="dj-list">
         <h2>DJ List</h2>
@@ -160,10 +180,22 @@ const AdminDjs = () => {
                   </li>
                 ))}
               </ul>
+              <div className="button-container">
+                <button className="update-btn" onClick={() => editDj(dj)}>
+                  Update 
+                </button>
+                <button className="delete-btn" onClick={() => deleteDj(dj.id)}>
+                  Delete
+                </button>
+              </div>
             </li>
           ))}
         </ul>
       </div>
+      {/* Add DJ Button */}
+      <button className="add-btn" onClick={toggleForm}>
+        Add New DJ
+      </button>
     </div>
   );
 };

@@ -1,10 +1,16 @@
-import DeveloperHomePage from "../DeveloperHomePage/DeveloperHomePage";
+import DeveloperLogin from "../DeveloperLogin/DeveloperLogin";
+import DeveloperPage from "../DevHomePage";
 
-export const DeveloperRouter = [
+const DeveloperRouter = [
+  {
+    path: "/developer-login",
+    element: <DeveloperLogin />,
+  },
   {
     path: "/developer-home",
-    element: <DeveloperHomePage />,
+    element: <DeveloperPage />,
   },
+  // Add other routes as needed
 ];
 
 export default DeveloperRouter;

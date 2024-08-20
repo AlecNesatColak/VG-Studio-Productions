@@ -1,17 +1,15 @@
 import React from "react";
 import "./styles.css";
 import Topbar from "./Topbar";
-import DevHomePage from "../DevHomePage"
+import DevHomePage from "../DevHomePage";
 
 function DeveloperHomePage({ children }) {
   return (
     <>
       <div className="developerHomePage">
         <Topbar />
-        <div>
-          <DevHomePage />
-        </div>{" "}
-      </div>{" "}
+        <div>{children}</div>
+      </div>
     </>
   );
 }

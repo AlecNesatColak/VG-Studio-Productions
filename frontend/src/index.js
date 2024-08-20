@@ -1,32 +1,42 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-import AdminApp from "../src/AdminPages/AdminHomePage/AdminApp";
-import "./index.css";
-import { BrowserRouter } from "react-router-dom";
-import DeveloperApp from "./DevPages/DeveloperHomePage/DeveloperHomePage";
+import AdminApp from "./AdminPages/AdminHomePage/AdminApp";
+import DeveloperApp from "./DevPages/DeveloperHomePage/DeveloperApp";
+import Login from "./AdminPages/AdminLogin/Login.jsx";
 
 const path = window.location.pathname;
 
-if (path.startsWith("/admin-panel")) {
-  ReactDOM.render(
-    <BrowserRouter>
-      <AdminApp />
-    </BrowserRouter>,
-    document.getElementById("root")
+const Root = () => {
+  if (path.startsWith("/admin")) {
+    return (
+      <Routes>
+        <Route path="/admin-login" element={<Login />} />
+        <Route path="*" element={<AdminApp />} />
+      </Routes>
+    );
+  }
+
+  if (path.startsWith("/developer")) {
+    return (
+      <Routes>
+        <Route path="*" element={<DeveloperApp />} />
+      </Routes>
+    );
+  }
+
+  return (
+    <Routes>
+      <Route path="*" element={<App />} />
+    </Routes>
   );
-} else if (path.startsWith("/developer-home")) {
-  ReactDOM.render(
-    <BrowserRouter>
-      <DeveloperApp />
-    </BrowserRouter>,
-    document.getElementById("root")
-  );
-} else {
-  ReactDOM.render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
-    document.getElementById("root")
-  );
-}
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <BrowserRouter>
+    <Root />
+  </BrowserRouter>
+);

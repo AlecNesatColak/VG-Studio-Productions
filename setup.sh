@@ -1,37 +1,19 @@
 #!/bin/bash
 
-#!/bin/bash
+# Step 1: Build Docker images and set up containers
+echo "Building Docker containers..."
+docker-compose build
 
-if [ ! -f .env ]; then
-    echo "Creating docker .env file with default values..."
+# Step 2: Start Docker containers
+echo "Starting Docker containers..."
+docker-compose up -d
 
-    mongo_password=$(dd if=/dev/urandom bs=32 count=1 2>/dev/null | base64)
-    auth_secret=$(dd if=/dev/urandom bs=32 count=1 2>/dev/null | base64)
+# Step 3: Display running containers
+docker ps
 
-    echo "mongo_password=$mongo_password" >> .env
-    echo "auth_secret=$auth_secret" >> .env
-    echo "API_URL=http://127.0.0.1:5000" >> .env
-    echo "api_key=some_api_key" >> .env
-fi
+# Step 4: Display logs for all running containers
+echo "Displaying logs for all running containers..."
+docker-compose logs -f
 
-if [ ! -d ./backend/node_modules ]; then
-    echo "Installing backend dependencies..."
-    cd backend
-    npm install
-    cd ..
-fi
-
-if [ ! -d ./frontend/node_modules ]; then
-    echo "Installing frontend dependencies..."
-    cd frontend
-    npm install
-    cd ..
-fi
-
-if [ -f "./run.sh" ]; then
-    chmod u+rwx "./run.sh"
-    dos2unix "./run.sh"
-else
-    echo "Could not find run.sh file. Your repository may be corrupted, or need to be re-pulled."
-fi
-
+# Step 5: Setup complete
+echo "Setup complete! Docker containers are running and logs are being displayed."
