@@ -1,14 +1,16 @@
- :root{
-  --title-color: hsl(0,0%,15%);
-  --text-color: hsl(0,0%,35%);
-  --body-color: hsl(0,0%,95%);
- }
- 
- .navbar {
+:root {
+  --title-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 35%);
+  --body-color: hsl(0, 0%, 95%);
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
   background-color: transparent;
+  position: relative;
+  z-index: 10; /* Navbar'ın üstte görünmesi için */
 }
 
 .navbar-left {
@@ -18,7 +20,7 @@
 
 .navbar-logo {
   width: 40px;
-  height: 40px; 
+  height: 40px;
   background-size: cover;
 }
 
@@ -31,10 +33,16 @@
 
 .navbar-right {
   display: flex;
-  list-style: none;
+  align-items: center;
 }
 
-.navbar-right li {
+.nav-menu {
+  display: flex;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+.nav-menu li {
   margin: 0 15px;
 }
 
@@ -45,5 +53,74 @@
 
 .nav-link:hover {
   color: #595959;
-} 
+}
 
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 11; /* Menü ikonunun üstte görünmesi için */
+}
+
+.menu-icon-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+.menu-close {
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  text-align: right;
+  padding: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: none; /* Menü kapalıyken gizle */
+}
+
+.nav-menu.active {
+  display: flex;
+  flex-direction: column;
+  position: fixed; /* Ekranın tamamını kaplaması için fixed */
+  top: 0;
+  right: 0;
+  background-color: var(--title-color);
+  width: 100vw; /* Ekranın tamamını kaplaması için */
+  height: 50vh; /* Menü yüksekliğini yarıya indir */
+  border-radius: 0;
+  z-index: 100; /* En önde görünmesi için */
+  overflow-y: auto; /* İçeriğin kaydırılabilir olması için */
+}
+
+.nav-menu.active .menu-close {
+  display: block; /* Menü açıldığında görünür */
+}
+
+.nav-menu.active li {
+  margin: 20px 0;
+}
+
+.nav-menu.active .nav-link {
+  color: #fff; /* Menü açıkken linklerin rengi */
+  text-align: center; /* Menüde ortalamak için */
+  font-size: 24px; /* Daha büyük font boyutu */
+}
+
+@media (max-width: 768px) {
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}

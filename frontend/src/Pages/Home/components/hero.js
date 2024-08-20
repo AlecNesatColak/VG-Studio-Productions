@@ -220,7 +220,7 @@ Hero.defaultProps = {
     "https://images.unsplash.com/photo-1516979187457-637abb4f9353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080",
   image10Alt: "Hero Image",
   image4Alt: "Hero Image",
-  heading1: "TESTING",
+  heading1: "TESTING!!!!",
   content1:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
   image10Src:

@@ -10,11 +10,6 @@ const Footer = (props) => {
       <div className="footer-max-width thq-section-max-width">
         <div className="footer-content">
           <div className="footer-newsletter">
-            <img
-              alt={props.logoAlt}
-              src={props.logoSrc}
-              className="footer-image1"
-            />
             <span className="thq-body-small">
               Subscribe to our newsletter for the latest updates on new features
               and product releases.
@@ -207,7 +202,6 @@ Footer.defaultProps = {
   action1: 'Subscribe',
   content3: '© 2024 TeleportHQ',
   link4: 'Link 4',
-  logoSrc: 'https://presentation-website-assets.teleporthq.io/logos/logo.png',
   cookiesLink: 'Cookies Settings',
   content2:
     'By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.',
