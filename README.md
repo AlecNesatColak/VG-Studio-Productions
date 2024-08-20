@@ -88,7 +88,7 @@ After making changes, stage and commit your changes as follows:
 
 ## Pushing Changes to Remote
 
-Once you've committed your changes, push the changes to the remote repository on the same branch:
+Once you've committed your changes, push the changes to the remote repository on the same branch:..
 
 ```bash
 git push origin <branch-name>
