@@ -38,7 +38,7 @@ Before making any changes to the project, ensure you pull the latest updates fro
 git pull origin <branch-name>
 ```
 
-Replace `<branch-name>` with the branch you want to pull updates from.
+Replace `<branch-name>` with the branch you want to pull updates from
 
 ---
 
