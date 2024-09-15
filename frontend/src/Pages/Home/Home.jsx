@@ -19,10 +19,6 @@ function Home() {
         </Helmet>
         <Hero></Hero>
         <Features1></Features1>
-        <CTA></CTA>
-        <Features2></Features2>
-        <Pricing></Pricing>
-        <Steps></Steps>
         {/* <Testimonial></Testimonial> */}
         <Contact></Contact>
       </div>

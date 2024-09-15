@@ -336,6 +336,7 @@ body {
   fill: var(--dl-color-theme-secondary2);
 }
 .thq-icon-medium {
+  color: white;
   width: var(--dl-size-size-small);
   height: var(--dl-size-size-small);
 }
@@ -487,6 +488,10 @@ body {
   line-height: 1.15;
   text-transform: none;
   text-decoration: none;
+}
+
+.icon {
+  color: white;
 }
 @media(max-width: 991px) {
   .thq-grid-4 {

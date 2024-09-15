@@ -59,6 +59,7 @@
   flex-direction: column;
 }
 .contact-text4 {
+  color: white;
   align-self: stretch;
   text-align: center;
 }
@@ -66,6 +67,7 @@
   text-align: center;
 }
 .contact-email {
+  color: rgb(197, 201, 204);
   text-align: center;
 }
 .contact-content4 {
@@ -91,6 +93,7 @@
   flex-direction: column;
 }
 .contact-text6 {
+  color: white;
   align-self: stretch;
   text-align: center;
 }
@@ -98,6 +101,7 @@
   text-align: center;
 }
 .contact-phone {
+  color: rgb(197, 201, 204);
   text-align: center;
 }
 .contact-content6 {
@@ -123,6 +127,7 @@
   flex-direction: column;
 }
 .contact-text8 {
+  color: white;
   align-self: stretch;
   text-align: center;
 }
@@ -130,6 +135,7 @@
   text-align: center;
 }
 .contact-address {
+  color: rgb(197, 201, 204);
   text-align: center;
 }
 @media(max-width: 767px) {

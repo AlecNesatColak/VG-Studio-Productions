@@ -48,7 +48,7 @@ img {
   place-items: center;
   margin-inline: 1.5rem;
   padding-block: 5rem;
- background-color: var(--nardo-grey);
+ background-color: rgba(255, 255, 255, 0.889);
  border-radius: 10px;
 }
 

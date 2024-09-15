@@ -29,10 +29,9 @@ const CTA = (props) => {
 }
 
 CTA.defaultProps = {
-  heading1: 'Medium length heading goes here',
-  content1:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
-  action1: 'Main Action',
+  heading1: 'Join the Hub by checking out the Blog',
+
+  action1: 'Blog',
 }
 
 CTA.propTypes = {

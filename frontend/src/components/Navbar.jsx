@@ -17,7 +17,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-left">
         <div className="navbar-logo"></div>
-        <span className="navbar-title">VG STUDiO</span>
+        <span className="navbar-title">LOGO</span>
       </div>
       <div className="navbar-right">
         <div className={`menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>

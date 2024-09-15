@@ -210,8 +210,7 @@ Hero.defaultProps = {
   image9Src:
     "https://images.unsplash.com/photo-1475938476802-32a7e851dad1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080",
   image11Alt: "Hero Image",
-  action2: "Secondary action",
-  action1: "Main action",
+
   image8Src:
     "https://images.unsplash.com/photo-1503980599186-9cc36eda351a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4Mnw&ixlib=rb-4.0.3&q=80&w=1080",
   image5Src:
@@ -220,9 +219,8 @@ Hero.defaultProps = {
     "https://images.unsplash.com/photo-1516979187457-637abb4f9353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080",
   image10Alt: "Hero Image",
   image4Alt: "Hero Image",
-  heading1: "TESTING!!!!",
-  content1:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+  heading1: "",
+  content1: "Quote",
   image10Src:
     "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMzgyMDQ4M3w&ixlib=rb-4.0.3&q=80&w=1080",
   image9Alt: "Hero Image",

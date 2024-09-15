@@ -50,7 +50,7 @@ const Contact = (props) => {
             </svg>
             <div className="contact-contact-info3">
               <div className="contact-content7">
-                <h3 className="contact-text8 thq-heading-3">Office</h3>
+                <h3 className="contact-text8 thq-heading-3">Studio</h3>
                 <p className="contact-text9 thq-body-large">{props.content5}</p>
               </div>
               <span className="contact-address thq-body-small">
@@ -66,17 +66,17 @@ const Contact = (props) => {
 
 Contact.defaultProps = {
   content2: 'Get in touch with us today!',
-  email1: 'hello@teleporthq.io',
+  email1: 'vgproductions26@gmail.com',
   address1: '456 Test Ave, Bucharest',
   content3:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.',
-  content1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+    'For inquiries or bookings feel free to reach out via email:',
+  content1: 'We specialize in capturing the essence of fashion shows, events, and DJ performances with stunning visuals.',
   content4:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.',
+    'Call or text us for immediate responses and quotes:',
   heading1: 'Contact us',
   content5:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.',
-  phone1: '+1 (555) 000-0000',
+    'Visit our studio for consultations or portfolio reviews:',
+  phone1: '+1 (813) 720-1525',
 }
 
 Contact.propTypes = {
